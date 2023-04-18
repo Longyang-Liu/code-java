@@ -11,6 +11,7 @@
     <modules>
         <module>code-demo</module>
         <module>code-test</module>
+        <module>springboot-log</module>
     </modules>
 
     <!--    确定spring boot版本-->
