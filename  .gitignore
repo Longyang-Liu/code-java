@@ -26,6 +26,8 @@
 *.ipr
 *.class
 target/
+target
+logs
 
 ### NetBeans ###
 nbproject/private/
