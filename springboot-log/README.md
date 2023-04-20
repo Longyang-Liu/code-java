@@ -13,6 +13,7 @@ fatal：致命的，因为代码异常导致程序退出执行的事件（不需
 > Logback 是log4j 框架的作者开发的新一代日志框架，它效率更高、能够适应诸多的运行环境，同时天然支持SLF4J Logback的定制性更加灵活，同时也是spring boot的内置日志框架
 ### 参考文档
 * https://blog.csdn.net/m0_71777195/article/details/126743783
+* https://blog.csdn.net/Biteht/article/details/128015006
 
 ### 使用
 1. maven依赖
