@@ -1,0 +1,87 @@
+2023-04-18 12:07:13.035  INFO 16780 --- [main] com.liu.log.LogApplication               : Starting LogApplication on DESKTOP-T0G5Q8S with PID 16780 (E:\coder\java\code-java\springboot-log\target\classes started by Admin in E:\coder\java\code-java)
+2023-04-18 12:07:13.043  INFO 16780 --- [main] com.liu.log.LogApplication               : No active profile set, falling back to default profiles: default
+2023-04-18 12:07:13.738  INFO 16780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1234 (http)
+2023-04-18 12:07:13.751  INFO 16780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-18 12:07:13.752  INFO 16780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2023-04-18 12:07:13.827  INFO 16780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-18 12:07:13.827  INFO 16780 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 729 ms
+2023-04-18 12:07:13.954  INFO 16780 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-18 12:07:14.108  INFO 16780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1234 (http) with context path ''
+2023-04-18 12:07:14.110  INFO 16780 --- [main] com.liu.log.LogApplication               : Started LogApplication in 1.798 seconds (JVM running for 2.922)
+2023-04-18 12:07:47.356  INFO 16780 --- [http-nio-1234-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-18 12:07:47.357  INFO 16780 --- [http-nio-1234-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-18 12:07:47.361  INFO 16780 --- [http-nio-1234-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-04-18 12:07:47.373  INFO 16780 --- [http-nio-1234-exec-1] com.liu.log.controller.MainController    : 测试日志 -> 10
+2023-04-18 12:08:16.651  INFO 16780 --- [http-nio-1234-exec-3] com.liu.log.controller.MainController    : 测试日志 -> 10
+2023-04-18 12:09:39.277  INFO 21500 --- [main] com.liu.log.LogApplication               : Starting LogApplication on DESKTOP-T0G5Q8S with PID 21500 (E:\coder\java\code-java\springboot-log\target\classes started by Admin in E:\coder\java\code-java)
+2023-04-18 12:09:39.280  INFO 21500 --- [main] com.liu.log.LogApplication               : No active profile set, falling back to default profiles: default
+2023-04-18 12:09:40.011  INFO 21500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1234 (http)
+2023-04-18 12:09:40.025  INFO 21500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-18 12:09:40.025  INFO 21500 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2023-04-18 12:09:40.106  INFO 21500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-18 12:09:40.106  INFO 21500 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 796 ms
+2023-04-18 12:09:40.228  INFO 21500 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-18 12:09:40.341  INFO 21500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1234 (http) with context path ''
+2023-04-18 12:09:40.343  INFO 21500 --- [main] com.liu.log.LogApplication               : Started LogApplication in 1.316 seconds (JVM running for 1.888)
+2023-04-18 12:09:44.260  INFO 21500 --- [http-nio-1234-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-18 12:09:44.260  INFO 21500 --- [http-nio-1234-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-18 12:09:44.263  INFO 21500 --- [http-nio-1234-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-18 12:09:44.276  INFO 21500 --- [http-nio-1234-exec-1] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 12:09:44.277 ERROR 21500 --- [http-nio-1234-exec-1] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 12:09:44.277  WARN 21500 --- [http-nio-1234-exec-1] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 12:14:48.114  INFO 21500 --- [http-nio-1234-exec-4] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 12:14:48.114 ERROR 21500 --- [http-nio-1234-exec-4] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 12:14:48.114  WARN 21500 --- [http-nio-1234-exec-4] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 13:46:00.975  INFO 11324 --- [main] com.liu.log.LogApplication               : Starting LogApplication on DESKTOP-T0G5Q8S with PID 11324 (E:\coder\java\code-java\springboot-log\target\classes started by Admin in E:\coder\java\code-java)
+2023-04-18 13:46:00.977  INFO 11324 --- [main] com.liu.log.LogApplication               : No active profile set, falling back to default profiles: default
+2023-04-18 13:46:01.671  INFO 11324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1234 (http)
+2023-04-18 13:46:01.686  INFO 11324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-18 13:46:01.686  INFO 11324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2023-04-18 13:46:01.760  INFO 11324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-18 13:46:01.761  INFO 11324 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 749 ms
+2023-04-18 13:46:01.889  INFO 11324 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-18 13:46:01.997  INFO 11324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1234 (http) with context path ''
+2023-04-18 13:46:01.999  INFO 11324 --- [main] com.liu.log.LogApplication               : Started LogApplication in 1.295 seconds (JVM running for 2.06)
+2023-04-18 13:50:26.126  INFO 23400 --- [main] com.liu.log.LogApplication               : Starting LogApplication on DESKTOP-T0G5Q8S with PID 23400 (E:\coder\java\code-java\springboot-log\target\classes started by Admin in E:\coder\java\code-java)
+2023-04-18 13:50:26.128  INFO 23400 --- [main] com.liu.log.LogApplication               : No active profile set, falling back to default profiles: default
+2023-04-18 13:50:26.798  INFO 23400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1234 (http)
+2023-04-18 13:50:26.812  INFO 23400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-18 13:50:26.812  INFO 23400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2023-04-18 13:50:26.889  INFO 23400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-18 13:50:26.889  INFO 23400 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 735 ms
+2023-04-18 13:50:27.006  INFO 23400 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-18 13:50:27.116  INFO 23400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1234 (http) with context path ''
+2023-04-18 13:50:27.118  INFO 23400 --- [main] com.liu.log.LogApplication               : Started LogApplication in 1.239 seconds (JVM running for 1.831)
+2023-04-18 13:59:45.897  INFO 20752 --- [main] com.liu.log.LogApplication               : Starting LogApplication on DESKTOP-T0G5Q8S with PID 20752 (E:\coder\java\code-java\springboot-log\target\classes started by Admin in E:\coder\java\code-java)
+2023-04-18 13:59:45.899  INFO 20752 --- [main] com.liu.log.LogApplication               : No active profile set, falling back to default profiles: default
+2023-04-18 13:59:46.536  INFO 20752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1234 (http)
+2023-04-18 13:59:46.550  INFO 20752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-18 13:59:46.550  INFO 20752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2023-04-18 13:59:46.628  INFO 20752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-18 13:59:46.628  INFO 20752 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 702 ms
+2023-04-18 13:59:46.756  INFO 20752 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-18 13:59:46.853  INFO 20752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1234 (http) with context path ''
+2023-04-18 13:59:46.855  INFO 20752 --- [main] com.liu.log.LogApplication               : Started LogApplication in 1.195 seconds (JVM running for 1.77)
+2023-04-18 13:59:51.847  INFO 20752 --- [http-nio-1234-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-18 13:59:51.847  INFO 20752 --- [http-nio-1234-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-18 13:59:51.850  INFO 20752 --- [http-nio-1234-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-18 13:59:51.861  INFO 20752 --- [http-nio-1234-exec-2] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 13:59:51.862  WARN 20752 --- [http-nio-1234-exec-2] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 13:59:51.862 ERROR 20752 --- [http-nio-1234-exec-2] com.liu.log.controller.MainController    : 测试日志 -> 1
+2023-04-18 18:14:53.144  WARN 3928 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mainController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.liu.log.service.impl.LogServiceImpl' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2023-04-18 18:14:53.218 ERROR 3928 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.liu.log.service.impl.LogServiceImpl' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.liu.log.service.impl.LogServiceImpl' in your configuration.
+
+2023-04-18 18:15:40.340  WARN 22640 --- [http-nio-1234-exec-1] com.liu.log.service.impl.LogServiceImpl  : lombok ->true 

@@ -1,0 +1,8 @@
+server:
+  port: 1234
+
+logging:
+  file: system.log # 日志文件名称
+  path:  # 设置目录，会在该目录下创建spring.log文件，并写入日志内容
+  level:
+    root: warn # 设置全局打印日志登记，低于此等级的日志不会被打印
