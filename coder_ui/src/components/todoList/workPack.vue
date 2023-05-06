@@ -8,6 +8,8 @@
 </template>
 
 <script>
+  import {addWorkPack, getList} from "../../api/todoList/workPackAPI";
+
   export default {
     name: "workPack",
     data(){
@@ -17,15 +19,28 @@
       }
     },
     mounted() {
+      this.getList();
     },
     methods:{
+      // 获取工作包数据
+      getList(){
+        getList().then(res => {
+          this.dataList = res.data.records
+          console.log(res)
+        })
+      },
       // 工作包输入框回车事件
       handleEnter(){
-
+        addWorkPack({
+          name: this.value,
+        }).then(() => {
+          this.value = null;
+          this.getList();
+        })
       },
       // 单击展示工作包任务
-      showPackTodoList(){
-
+      showPackTodoList(item){
+        this.$emit("showPackTodoList", item)
       },
       // 双击可修改工作包信息
       showPackDetail(){
@@ -36,5 +51,9 @@
 </script>
 
 <style scoped>
+
+  .packName{
+    cursor: pointer;
+  }
 
 </style>

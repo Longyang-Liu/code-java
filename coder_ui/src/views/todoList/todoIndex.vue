@@ -2,10 +2,10 @@
   <div>
     <el-row :gutter="20">
       <el-col :span="6">
-        <work-pack></work-pack>
+        <work-pack @showPackTodoList="showPackTodoList"></work-pack>
       </el-col>
       <el-col :span="18">
-        <todo-list-index></todo-list-index>
+        <todo-list-index ref="todoListIndexRef"></todo-list-index>
       </el-col>
     </el-row>
 
@@ -25,7 +25,11 @@
 
     },
     methods:{
-
+      // 点击工作包筛选数据
+      showPackTodoList(item){
+        console.log(item)
+        this.$refs.todoListIndexRef.getPackTodoList(item.id);
+      }
     }
   }
   </script>

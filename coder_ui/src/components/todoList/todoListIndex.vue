@@ -35,6 +35,9 @@
         value: null,
         title: '标题',
         dataList: [],
+        queryParams:{
+          packId: null,
+        }
       }
     },
     mounted() {
@@ -43,9 +46,14 @@
     methods:{
       // 获取待办数据
       getList(){
-        getList().then(res => {
+        getList(this.queryParams).then(res => {
           this.dataList = this.setFinishEd(res.data.records)
         })
+      },
+      // 通过工作包ID筛选数据
+      getPackTodoList(id){
+        this.queryParams.packId = id;
+        this.getList();
       },
       // 循环判断任务是否已完成
       setFinishEd(list) {
@@ -63,6 +71,7 @@
       handleEnter(){
         addTodo({
           content: this.value,
+          packId: this.queryParams.packId
         }).then(res => {
           this.value = null;
           console.log(res)

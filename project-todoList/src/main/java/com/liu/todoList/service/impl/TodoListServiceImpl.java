@@ -27,6 +27,11 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
     public Page<TodoList> getList(TodoList todoList) {
         Page<TodoList> page = new Page<> (1, 10);
         QueryWrapper<TodoList> wrapper =new QueryWrapper<>();
+        // 通过工作包ID筛选
+        if(todoList.getPackId() != null && todoList.getPackId() != ""){
+            wrapper.eq("pack_id", todoList.getPackId());
+        }
+        // 排序
         wrapper.select().orderByAsc("finish");
         wrapper.select().orderByDesc("id");
         Page<TodoList> todoListPage = todoListMapper.selectPage(page, wrapper);
@@ -36,7 +41,6 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
     @Override
     public Boolean addTodo(TodoList todoList) {
         todoList.setCreateTime(new Date());
-        todoList.setId(null);
         todoListMapper.insert(todoList);
         return true;
     }
