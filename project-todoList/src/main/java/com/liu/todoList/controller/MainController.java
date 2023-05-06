@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/todoList")
+@RequestMapping("/main")
 public class MainController {
 
     @Resource

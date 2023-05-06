@@ -1,17 +1,16 @@
 <template>
-  <div id="app">
-    <test-u-i></test-u-i>
+  <div>
+    <todo-index></todo-index>
   </div>
 </template>
 
 <script>
 
-
-import TestUI from "./views/testPackage/testUI";
+import TodoIndex from "./views/todoList/todoIndex";
 export default {
   name: 'App',
   components: {
-    TestUI
+    TodoIndex
 
   }
 }

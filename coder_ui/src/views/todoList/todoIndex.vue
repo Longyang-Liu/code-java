@@ -2,10 +2,10 @@
   <div>
     <el-row :gutter="20">
       <el-col :span="6">
-        <WorkPack @showPackTodoList="showPackTodoList"></WorkPack>
+        <work-pack></work-pack>
       </el-col>
       <el-col :span="18">
-        <TodoDetail ref="todoDetailRef"></TodoDetail>
+        <todo-list-index></todo-list-index>
       </el-col>
     </el-row>
 
@@ -13,21 +13,19 @@
 </template>
   
   <script>
-  import TodoDetail from '@/components/todoList/todoDetail.vue';
-import WorkPack from '@/components/todoList/workPack.vue';
 
+
+  import TodoListIndex from "../../components/todoList/todoListIndex";
+  import WorkPack from "../../components/todoList/workPack";
   export default {
     name: 'todoIndex',
     components: {
-      TodoDetail,
-      WorkPack
+      WorkPack,
+      TodoListIndex
+
     },
     methods:{
-      // 查询对应工作包的计划
-      showPackTodoList(id){
-        console.log(id)
-        this.$refs.todoDetailRef.getPackTodoList(id);
-      }
+
     }
   }
   </script>

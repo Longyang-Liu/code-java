@@ -2,15 +2,18 @@ package com.liu.todoList.service.impl;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.todoList.domain.TodoList;
 import com.liu.todoList.mapper.TodoListMapper;
 import com.liu.todoList.service.ITodoListService;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 @Slf4j
 @Service
@@ -24,11 +27,34 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
     public Page<TodoList> getList(TodoList todoList) {
         Page<TodoList> page = new Page<> (1, 10);
         QueryWrapper<TodoList> wrapper =new QueryWrapper<>();
+        wrapper.select().orderByAsc("finish");
+        wrapper.select().orderByDesc("id");
         Page<TodoList> todoListPage = todoListMapper.selectPage(page, wrapper);
-        log.info("todoList");
-        for (TodoList record : todoListPage.getRecords()) {
-            System.out.println(record);
-        }
         return todoListPage;
+    }
+
+    @Override
+    public Boolean addTodo(TodoList todoList) {
+        todoList.setCreateTime(new Date());
+        todoList.setId(null);
+        todoListMapper.insert(todoList);
+        return true;
+    }
+
+    @Override
+    public Boolean updateTodo(TodoList todoList) {
+
+
+        LambdaUpdateWrapper<TodoList> lambdaUpdateWrapper = new LambdaUpdateWrapper<>();
+        lambdaUpdateWrapper.eq(TodoList::getId, todoList.getId())
+                .set(TodoList::getFinish, todoList.getFinish())
+                .set(TodoList::getFinishTime, todoList.getFinish() == 2 ? new Date() : null);
+        todoListMapper.update(null, lambdaUpdateWrapper);
+        return true;
+    }
+
+    @Override
+    public Boolean deletedTodo(TodoList todoList) {
+        return null;
     }
 }

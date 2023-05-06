@@ -3,7 +3,10 @@ package com.liu.todoList.domain;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+
+import java.util.Date;
 
 @Data
 @TableName("todo_list")
@@ -18,14 +21,15 @@ public class TodoList {
     @TableField("content")
     String content;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField("create_time")
-    String createTime;
+    Date createTime;
 
     @TableField("finish")
-    String finish;
+    Integer finish;
 
     @TableField("finish_time")
-    String finishTime;
+    Date finishTime;
 
     @TableField("memo")
     String memo;
