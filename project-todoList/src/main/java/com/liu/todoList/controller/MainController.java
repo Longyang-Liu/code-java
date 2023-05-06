@@ -1,0 +1,14 @@
+package com.liu.todoList.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/todoList")
+public class MainController {
+
+    @RequestMapping("/test")
+    public String test(){
+        return "success";
+    }
+}
