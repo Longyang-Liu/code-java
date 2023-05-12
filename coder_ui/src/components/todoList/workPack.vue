@@ -31,6 +31,8 @@
       },
       // 工作包输入框回车事件
       handleEnter(){
+        console.log(this.value)
+
         addWorkPack({
           name: this.value,
         }).then(() => {

@@ -14,7 +14,10 @@ public interface ITodoListService extends IService<TodoList> {
      * @Date: 2023/5/6 16:10
     */
     Page<TodoList> getList(TodoList todoList);
-    
+
+
+    TodoList getById(Long id);
+
     /**
      * @Description: 新增任务
      * @param todoList
@@ -35,10 +38,10 @@ public interface ITodoListService extends IService<TodoList> {
     
     /**
      * @Description: 删除任务
-     * @param todoList
+     * @param id
      * @return: com.liu.todoList.domain.TodoList
      * @Author: Liu
      * @Date: 2023/5/6 16:39
     */
-    Boolean deletedTodo(TodoList todoList);
+    Boolean deletedTodo(Long id);
 }

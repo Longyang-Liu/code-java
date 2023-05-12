@@ -9,6 +9,13 @@ export function getList(query) {
   })
 }
 
+export function getTodoListInfo(id) {
+  return todoListRequest({
+    url: '/todoList/' + id,
+    method: 'get'
+  })
+}
+
 // 新增
 export function addTodo(data) {
   return todoListRequest({
@@ -24,5 +31,13 @@ export function updateTodo(data) {
     url: '/todoList/updateTodo',
     method: 'put',
     data: data
+  })
+}
+
+// 删除
+export function delTodoInfo(id) {
+  return todoListRequest({
+    url: '/todoList/' + id,
+    method: 'delete'
   })
 }

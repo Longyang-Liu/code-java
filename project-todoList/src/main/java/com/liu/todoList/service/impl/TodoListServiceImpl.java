@@ -39,6 +39,11 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
     }
 
     @Override
+    public TodoList getById(Long id) {
+        return todoListMapper.selectById(id);
+    }
+
+    @Override
     public Boolean addTodo(TodoList todoList) {
         todoList.setCreateTime(new Date());
         todoListMapper.insert(todoList);
@@ -47,10 +52,10 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
 
     @Override
     public Boolean updateTodo(TodoList todoList) {
-
-
         LambdaUpdateWrapper<TodoList> lambdaUpdateWrapper = new LambdaUpdateWrapper<>();
         lambdaUpdateWrapper.eq(TodoList::getId, todoList.getId())
+                .set(TodoList::getMemo, todoList.getMemo())
+                .set(TodoList::getContent, todoList.getContent())
                 .set(TodoList::getFinish, todoList.getFinish())
                 .set(TodoList::getFinishTime, todoList.getFinish() == 2 ? new Date() : null);
         todoListMapper.update(null, lambdaUpdateWrapper);
@@ -58,7 +63,10 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
     }
 
     @Override
-    public Boolean deletedTodo(TodoList todoList) {
-        return null;
+    public Boolean deletedTodo(Long id) {
+        todoListMapper.deleteById(id);
+        return true;
     }
+
+
 }

@@ -3,10 +3,13 @@ package com.liu.todoList.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.liu.todoList.domain.TodoList;
 import com.liu.todoList.service.ITodoListService;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @CrossOrigin
 @RestController
 @RequestMapping("/todoList")
@@ -22,10 +25,16 @@ public class TodoListController {
      * @Author: Liu
      * @Date: 2023/5/6 16:32
     */
-    @RequestMapping("/getList")
+    @GetMapping("/getList")
     public Page<TodoList> getList(TodoList todoList){
         Page<TodoList> list = todoListService.getList(todoList);
         return list;
+    }
+
+    @GetMapping(value = "/{id}")
+    public TodoList getInfo(@PathVariable("id") Long id)
+    {
+        return todoListService.getById(id);
     }
 
     @PostMapping("/addTodo")
@@ -38,5 +47,12 @@ public class TodoListController {
     public Boolean updateTodo(@RequestBody TodoList todoList){
         todoListService.updateTodo(todoList);
         return true;
+    }
+
+    @DeleteMapping("/{id}")
+    public Boolean deletedTodo(@PathVariable Long id)
+    {
+        log.info("todoId => {}", id);
+        return todoListService.deletedTodo(id);
     }
 }

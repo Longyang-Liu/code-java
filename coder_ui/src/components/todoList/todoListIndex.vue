@@ -22,14 +22,21 @@
         </el-row>
       </div>
     </el-card>
+
+    <TodoDrawer
+            ref="todoDrawerRef"
+            @updateSuccess="updateSuccess"
+    ></TodoDrawer>
   </div>
 </template>
 
 <script>
   import {addTodo, getList, updateTodo} from "../../api/todoList/todoListAPI";
+  import TodoDrawer from "./todoDrawer";
 
   export default {
     name: "todoListIndex",
+    components: {TodoDrawer},
     data(){
       return{
         value: null,
@@ -89,8 +96,13 @@
         })
       },
       // 双击任务事件
-      handleContextMenu(){
-
+      handleContextMenu(item){
+        console.log(item);
+        this.$refs.todoDrawerRef.handleOpen(item.id);
+      },
+      // 修改任务回调
+      updateSuccess(){
+        this.getList();
       },
     }
   }
