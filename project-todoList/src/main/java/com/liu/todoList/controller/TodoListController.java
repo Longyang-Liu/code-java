@@ -28,6 +28,7 @@ public class TodoListController {
     @GetMapping("/getList")
     public Page<TodoList> getList(TodoList todoList){
         Page<TodoList> list = todoListService.getList(todoList);
+        list.setTotal(list.getRecords().size());
         return list;
     }
 

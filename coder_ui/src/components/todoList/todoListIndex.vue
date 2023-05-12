@@ -98,7 +98,7 @@
       // 双击任务事件
       handleContextMenu(item){
         console.log(item);
-        this.$refs.todoDrawerRef.handleOpen(item.id);
+        this.$refs.todoDrawerRef.handleOpen("todo", item.id);
       },
       // 修改任务回调
       updateSuccess(){

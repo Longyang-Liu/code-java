@@ -1,6 +1,7 @@
 package com.liu.todoList.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.liu.todoList.domain.TodoList;
@@ -30,9 +31,29 @@ public class WorkPackServiceImpl extends ServiceImpl<WorkPackMapper, WorkPack> i
     }
 
     @Override
+    public WorkPack getById(Long id) {
+        return workPackMapper.selectById(id);
+    }
+
+    @Override
     public Boolean addWorkPack(WorkPack workPack) {
         workPack.setCreateTime(new Date());
         workPackMapper.insert(workPack);
+        return true;
+    }
+
+    @Override
+    public Boolean updateTodo(WorkPack workPack) {
+        LambdaUpdateWrapper<WorkPack> lambdaUpdateWrapper = new LambdaUpdateWrapper<>();
+        lambdaUpdateWrapper.eq(WorkPack::getId, workPack.getId())
+                .set(WorkPack::getName, workPack.getName());
+        workPackMapper.update(null, lambdaUpdateWrapper);
+        return true;
+    }
+
+    @Override
+    public Boolean deletedTodo(Long id) {
+        workPackMapper.deleteById(id);
         return true;
     }
 }

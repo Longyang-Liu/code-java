@@ -1,6 +1,6 @@
 import {todoListRequest} from "../../utils/request/TodoListRequest";
 
-// 通过ID查询文化内容
+// 查询内容
 export function getList(query) {
   return todoListRequest({
     url: '/todoList/getList',
@@ -9,6 +9,7 @@ export function getList(query) {
   })
 }
 
+// 通过 ID 查询
 export function getTodoListInfo(id) {
   return todoListRequest({
     url: '/todoList/' + id,

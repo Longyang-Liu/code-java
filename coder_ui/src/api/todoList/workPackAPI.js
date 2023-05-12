@@ -9,11 +9,35 @@ export function getList(query) {
   })
 }
 
+export function getWorkPackInfo(id) {
+  return todoListRequest({
+    url: '/workPack/' + id,
+    method: 'get'
+  })
+}
+
 // 新增
 export function addWorkPack(data) {
   return todoListRequest({
     url: '/workPack/addWorkPack',
     method: 'post',
     data: data
+  })
+}
+
+// 修改
+export function updateWorkPack(data) {
+  return todoListRequest({
+    url: '/workPack/updateWorkPack',
+    method: 'put',
+    data: data
+  })
+}
+
+// 删除
+export function delPackInfo(id) {
+  return todoListRequest({
+    url: '/workPack/' + id,
+    method: 'delete'
   })
 }

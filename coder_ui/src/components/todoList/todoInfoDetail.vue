@@ -24,9 +24,6 @@
   import {newMessage} from "../../utils/InfoUtil";
   export default {
     name: "todoInfoDetail",
-    props:{
-      todoId: String
-    },
     data(){
       return{
         form:{
@@ -37,7 +34,7 @@
     },
     methods: {
       // 通过ID查询任务
-      getContent(id){
+      getInfoContent(id){
         getTodoListInfo(id).then(res => {
           this.form = res.data
         })

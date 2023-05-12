@@ -9,5 +9,11 @@ public interface IWorkPackService extends IService<WorkPack> {
 
     Page<WorkPack> getList(WorkPack workPack);
 
+    WorkPack getById(Long id);
+
     Boolean addWorkPack(WorkPack workPack);
+
+    Boolean updateTodo(WorkPack workPack);
+
+    Boolean deletedTodo(Long id);
 }

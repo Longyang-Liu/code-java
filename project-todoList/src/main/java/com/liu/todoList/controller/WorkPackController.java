@@ -23,9 +23,27 @@ public class WorkPackController {
         return list;
     }
 
+    @GetMapping(value = "/{id}")
+    public WorkPack getInfo(@PathVariable("id") Long id)
+    {
+        return workPackService.getById(id);
+    }
+
     @PostMapping("/addWorkPack")
     public Boolean addWorkPack(@RequestBody WorkPack workPack){
         workPackService.addWorkPack(workPack);
         return true;
+    }
+
+    @PutMapping("/updateWorkPack")
+    public Boolean updateTodo(@RequestBody WorkPack workPack){
+        workPackService.updateTodo(workPack);
+        return true;
+    }
+
+    @DeleteMapping("/{id}")
+    public Boolean deletedTodo(@PathVariable Long id)
+    {
+        return workPackService.deletedTodo(id);
     }
 }
