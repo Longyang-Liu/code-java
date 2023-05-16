@@ -11,13 +11,13 @@
           </el-col>
         </el-row>
       </div>
-      <div v-for="item in dataList" :key="item.id" class="text item fontBox">
+      <div v-for="item in dataList" :key="item.id" class="text item fontBox" @dblclick="handleContextMenu(item)">
         <el-row :gutter="10">
           <el-col :span="1.5">
             <el-checkbox v-model="item.finished" size="medium"  @change="changeTask(item)"></el-checkbox>
           </el-col>
           <el-col :span="20">
-            <span class="taskP contentShow" @dblclick="handleContextMenu(item)">{{ item.content }}</span>
+            <span class="taskP contentShow" >{{ item.content }}</span>
           </el-col>
         </el-row>
       </div>

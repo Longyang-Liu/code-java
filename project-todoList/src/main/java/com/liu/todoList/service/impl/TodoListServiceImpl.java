@@ -54,10 +54,14 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
     public Boolean updateTodo(TodoList todoList) {
         LambdaUpdateWrapper<TodoList> lambdaUpdateWrapper = new LambdaUpdateWrapper<>();
         lambdaUpdateWrapper.eq(TodoList::getId, todoList.getId())
-                .set(TodoList::getMemo, todoList.getMemo())
-                .set(TodoList::getContent, todoList.getContent())
                 .set(TodoList::getFinish, todoList.getFinish())
                 .set(TodoList::getFinishTime, todoList.getFinish() == 2 ? new Date() : null);
+        if(todoList.getMemo() != null ){
+            lambdaUpdateWrapper.set(TodoList::getMemo, todoList.getMemo());
+        }
+        if(todoList.getContent() != null ){
+            lambdaUpdateWrapper.set(TodoList::getContent, todoList.getContent());
+        }
         todoListMapper.update(null, lambdaUpdateWrapper);
         return true;
     }
@@ -67,6 +71,8 @@ public class TodoListServiceImpl extends ServiceImpl<TodoListMapper, TodoList> i
         todoListMapper.deleteById(id);
         return true;
     }
+
+
 
 
 }

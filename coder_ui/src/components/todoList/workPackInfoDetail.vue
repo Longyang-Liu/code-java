@@ -1,7 +1,7 @@
 <template>
   <div style="margin: 0.2rem 0.5rem;">
     <el-form ref="form" :model="form" label-width="80px">
-      <el-form-item label="名字" label-width="50px">
+      <el-form-item label="名称" label-width="50px">
         <el-input type="textarea" v-model="form.name"></el-input>
       </el-form-item>
 <!--      <el-form-item label="备注" label-width="50px">-->
