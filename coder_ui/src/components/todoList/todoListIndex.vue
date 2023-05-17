@@ -33,6 +33,7 @@
 <script>
   import {addTodo, getList, updateTodo} from "../../api/todoList/todoListAPI";
   import TodoDrawer from "./todoDrawer";
+  import {getWorkPackInfo} from "../../api/todoList/workPackAPI";
 
   export default {
     name: "todoListIndex",
@@ -59,6 +60,9 @@
       },
       // 通过工作包ID筛选数据
       getPackTodoList(id){
+        getWorkPackInfo(id).then(res => {
+          this.title = res.data.name
+        })
         this.queryParams.packId = id;
         this.getList();
       },
