@@ -23,6 +23,9 @@ public class WorkPack {
     @TableField("name")
     String name;
 
+    @TableField("memo")
+    String memo;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField("create_time")
     Date createTime;

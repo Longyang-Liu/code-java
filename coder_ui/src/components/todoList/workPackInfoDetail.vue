@@ -4,9 +4,9 @@
       <el-form-item label="名称" label-width="50px">
         <el-input type="textarea" v-model="form.name"></el-input>
       </el-form-item>
-<!--      <el-form-item label="备注" label-width="50px">-->
-<!--        <el-input type="textarea" v-model="form.memo"></el-input>-->
-<!--      </el-form-item>-->
+      <el-form-item label="备注" label-width="50px">
+        <el-input type="textarea" v-model="form.memo"></el-input>
+      </el-form-item>
     </el-form>
     <el-row class="contentDiv">
       <el-button style="width: 100%;" type="success" @click="change">保存修改</el-button>

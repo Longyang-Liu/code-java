@@ -2,9 +2,14 @@
   <div>
     <el-input :rows="1" type="textarea" v-model="value" placeholder="packName..." @keyup.enter.native="handleEnter"></el-input>
     <p v-for="item in dataList" :key="item.id" class="packName" style="display: flex; align-content: center">
-      <el-progress v-if="item.progress < 50" :width="25" type="circle" :percentage="item.progress" :show-text="false" status="warning"></el-progress>
-      <el-progress v-else-if="item.progress < 100" :width="25" type="circle" :percentage="item.progress" :show-text="false"></el-progress>
-      <el-progress v-else :width="25" type="circle" :percentage="item.progress" :show-text="true" status="success"></el-progress>
+      <el-progress
+              :stroke-width="5"
+              :width="20"
+              type="circle"
+              :percentage="item.progress"
+              :show-text="false"
+              :status="item.progress == 100 ? 'success' : ''"
+      ></el-progress>
       <span @dblclick="showPackDetail(item)" @click="showPackTodoList(item)">{{ item.name }}</span>
     </p>
 

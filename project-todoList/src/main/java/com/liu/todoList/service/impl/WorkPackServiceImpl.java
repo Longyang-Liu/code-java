@@ -13,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.List;
@@ -53,8 +52,13 @@ public class WorkPackServiceImpl extends ServiceImpl<WorkPackMapper, WorkPack> i
     @Override
     public Boolean updateTodo(WorkPack workPack) {
         LambdaUpdateWrapper<WorkPack> lambdaUpdateWrapper = new LambdaUpdateWrapper<>();
-        lambdaUpdateWrapper.eq(WorkPack::getId, workPack.getId())
-                .set(WorkPack::getName, workPack.getName());
+        lambdaUpdateWrapper.eq(WorkPack::getId, workPack.getId());
+        if(workPack.getName() != null ){
+            lambdaUpdateWrapper.set(WorkPack::getName, workPack.getName());
+        }
+        if(workPack.getMemo() != null ){
+            lambdaUpdateWrapper.set(WorkPack::getMemo, workPack.getMemo());
+        }
         workPackMapper.update(null, lambdaUpdateWrapper);
         return true;
     }
@@ -84,18 +88,28 @@ public class WorkPackServiceImpl extends ServiceImpl<WorkPackMapper, WorkPack> i
         }
     }
 
+    /**
+     * @Description: 获取工作包进度
+     * @param lists
+     * @return: java.lang.Double
+     * @Author: Liu
+     * @Date: 2023/5/18 11:28
+    */
     public Double getProgress(List<TodoList> lists){
-        int count = 0;
-        for (TodoList todo : lists) {
-            if(todo.getFinish().equals(2)){
-                count += 1;
+        if(lists != null && lists.size() > 0){
+            int count = 0;
+            for (TodoList todo : lists) {
+                if(todo.getFinish().equals(2)){
+                    count += 1;
+                }
             }
+            double number = (double) count / lists.size();
+            DecimalFormat df = new DecimalFormat("#");
+            String result = df.format(number* 100);
+            double roundedNumber = Double.parseDouble(result);
+            log.info("count / lists.size() -> {}", roundedNumber);
+            return roundedNumber;
         }
-        double number = (double) count / lists.size();
-        DecimalFormat df = new DecimalFormat("#");
-        String result = df.format(number* 100);
-        double roundedNumber = Double.parseDouble(result);
-        log.info("count / lists.size() -> {}", roundedNumber);
-        return roundedNumber;
+        return (double)0;
     }
 }

@@ -34,6 +34,7 @@
   import {addTodo, getList, updateTodo} from "../../api/todoList/todoListAPI";
   import TodoDrawer from "./todoDrawer";
   import {getWorkPackInfo} from "../../api/todoList/workPackAPI";
+  import {textTrim} from "../../utils/StrUtil";
 
   export default {
     name: "todoListIndex",
@@ -57,6 +58,7 @@
         getList(this.queryParams).then(res => {
           this.dataList = this.setFinishEd(res.data.records)
         })
+        this.$emit("changeTask")
       },
       // 通过工作包ID筛选数据
       getPackTodoList(id){
@@ -81,7 +83,7 @@
       // 输入框回车保存事件
       handleEnter(){
         addTodo({
-          content: this.value,
+          content: textTrim(this.value, /[\r\n]/g),
           packId: this.queryParams.packId
         }).then(res => {
           this.value = null;
@@ -97,7 +99,6 @@
         updateTodo({id: item.id, finish: finished}).then(res => {
           console.log(res)
           this.getList();
-          this.$emit("changeTask")
         })
       },
       // 双击任务事件
