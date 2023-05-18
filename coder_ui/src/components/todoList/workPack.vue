@@ -1,7 +1,8 @@
 <template>
   <div>
     <el-input :rows="1" type="textarea" v-model="value" placeholder="packName..." @keyup.enter.native="handleEnter"></el-input>
-    <p v-for="item in dataList" :key="item.id" class="packName" >
+    <p v-for="item in dataList" :key="item.id" class="packName" style="display: flex; align-content: center">
+<!--      <el-progress :width="25" type="circle" :percentage="item.progress" :show-text="true"></el-progress>-->
       <span @dblclick="showPackDetail(item)" @click="showPackTodoList(item)">{{ item.name }}</span>
     </p>
 
@@ -81,6 +82,7 @@
 
   .packName{
     cursor: pointer;
+    margin-left: 1rem;
   }
 
 </style>

@@ -25,6 +25,7 @@ public class TodoList {
     @TableField("create_time")
     Date createTime;
 
+    // 任务是否完成 1否 2是
     @TableField("finish")
     Integer finish;
 

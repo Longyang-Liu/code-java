@@ -25,5 +25,5 @@ public class WorkPack {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField("create_time")
-    private Date createTime;
+    Date createTime;
 }
