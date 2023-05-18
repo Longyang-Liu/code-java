@@ -2,10 +2,10 @@
   <div>
     <el-row :gutter="20">
       <el-col :span="6">
-        <work-pack @showPackTodoList="showPackTodoList"></work-pack>
+        <work-pack ref="workPackRef" @showPackTodoList="showPackTodoList"></work-pack>
       </el-col>
       <el-col :span="18">
-        <todo-list-index ref="todoListIndexRef"></todo-list-index>
+        <todo-list-index ref="todoListIndexRef" @changeTask="changeTask"></todo-list-index>
       </el-col>
     </el-row>
 
@@ -29,7 +29,11 @@
       showPackTodoList(item){
         console.log(item)
         this.$refs.todoListIndexRef.getPackTodoList(item.id);
-      }
+      },
+      // 任务完成状态改变
+      changeTask(){
+        this.$refs.workPackRef.getList();
+      },
     }
   }
   </script>

@@ -97,6 +97,7 @@
         updateTodo({id: item.id, finish: finished}).then(res => {
           console.log(res)
           this.getList();
+          this.$emit("changeTask")
         })
       },
       // 双击任务事件

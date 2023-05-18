@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -32,6 +33,8 @@ public class WorkPackServiceImpl extends ServiceImpl<WorkPackMapper, WorkPack> i
         QueryWrapper<WorkPack> wrapper =new QueryWrapper<>();
         wrapper.select().orderByDesc("id");
         Page<WorkPack> workPackPage = workPackMapper.selectPage(page, wrapper);
+        // 工作包进度设置
+        setPackProgress(workPackPage.getRecords());
         return workPackPage;
     }
 
@@ -60,5 +63,39 @@ public class WorkPackServiceImpl extends ServiceImpl<WorkPackMapper, WorkPack> i
     public Boolean deletedTodo(Long id) {
         workPackMapper.deleteById(id);
         return true;
+    }
+
+
+    /**
+     * @Description: 设置工作包进度
+     * @param list
+     * @return: void
+     * @Author: Liu
+     * @Date: 2023/5/18 9:59
+    */
+    public void setPackProgress(List<WorkPack> list){
+        TodoList todoList;
+        for (WorkPack workPack : list) {
+            log.info("workPack.getId() -> {}", workPack.getId());
+            todoList = new TodoList();
+            todoList.setPackId(workPack.getId());
+            Page<TodoList> list1 = todoListService.getList(todoList);
+            workPack.setProgress(getProgress(list1.getRecords()));
+        }
+    }
+
+    public Double getProgress(List<TodoList> lists){
+        int count = 0;
+        for (TodoList todo : lists) {
+            if(todo.getFinish().equals(2)){
+                count += 1;
+            }
+        }
+        double number = (double) count / lists.size();
+        DecimalFormat df = new DecimalFormat("#");
+        String result = df.format(number* 100);
+        double roundedNumber = Double.parseDouble(result);
+        log.info("count / lists.size() -> {}", roundedNumber);
+        return roundedNumber;
     }
 }
