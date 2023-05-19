@@ -35,6 +35,7 @@
   import TodoDrawer from "./todoDrawer";
   import {getWorkPackInfo} from "../../api/todoList/workPackAPI";
   import {textTrim} from "../../utils/StrUtil";
+  import {newMessage} from "../../utils/InfoUtil";
 
   export default {
     name: "todoListIndex",
@@ -82,12 +83,19 @@
       },
       // 输入框回车保存事件
       handleEnter(){
+        if(this.value == null || textTrim(this.value, /[\r\n]/g) == ''){
+          newMessage("warning", '内容为空，保存失败')
+        }else{
+          this.insertTodo();
+        }
+        this.value = null;
+      },
+      // 新增任务
+      insertTodo(){
         addTodo({
           content: textTrim(this.value, /[\r\n]/g),
           packId: this.queryParams.packId
-        }).then(res => {
-          this.value = null;
-          console.log(res)
+        }).then(() => {
           this.getList();
         })
       },

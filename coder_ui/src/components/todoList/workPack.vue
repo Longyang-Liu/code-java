@@ -24,6 +24,8 @@
   import TodoDrawer from "./todoDrawer";
 
   import {addWorkPack, getList} from "../../api/todoList/workPackAPI";
+  import {textTrim} from "../../utils/StrUtil";
+  import {newMessage} from "../../utils/InfoUtil";
 
   export default {
     name: "workPack",
@@ -50,11 +52,18 @@
       },
       // 工作包输入框回车事件
       handleEnter(){
-        console.log(this.value)
+        if(this.value == null || textTrim(this.value, /[\r\n]/g) == ''){
+          newMessage("warning", '内容为空，保存失败')
+        }else{
+          this.insertPack();
+        }
+        this.value = null;
+      },
+      // 新增工作包
+      insertPack(){
         addWorkPack({
           name: this.value,
         }).then(() => {
-          this.value = null;
           this.getList();
         })
       },
