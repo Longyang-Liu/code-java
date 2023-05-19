@@ -17,6 +17,11 @@ const router = new VueRouter({
       name: 'todo',
       component: todoIndex
     },
+    {
+      path: "/todo1",
+      name: 'todo1',
+      component: todoIndex
+    },
 
   ]
 });

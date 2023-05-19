@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 // 1.导入路由模块
-// import router from '@/router'
+import router from '@/router'
 
 Vue.config.productionTip = false
 
@@ -13,8 +13,9 @@ Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 /** ElementUI END */
 
 
+
 new Vue({
   render: h => h(App),
   // 2.挂载路由模块
-  // router: router
+  router: router
 }).$mount('#app')
