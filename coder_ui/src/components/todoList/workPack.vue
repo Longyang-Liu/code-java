@@ -8,7 +8,7 @@
               type="circle"
               :percentage="item.progress"
               :show-text="false"
-              :status="item.progress == 100 ? 'success' : ''"
+              :status="item.progress == 100 ? 'success' : null"
       ></el-progress>
       <span @dblclick="showPackDetail(item)" @click="showPackTodoList(item)">{{ item.name }}</span>
     </p>
