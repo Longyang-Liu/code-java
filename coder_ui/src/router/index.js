@@ -2,6 +2,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+// 首页组件
+import indexPage from "@/views/indexPage";
+
+// 任务列表组件
 import todoIndex from "@/views/todoList/todoIndex";
 
 // 2.调用 Vue.use()，把 VueRouter 安装为Vue插件
@@ -11,15 +15,14 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-
     {
-      path: "/todo",
-      name: 'todo',
-      component: todoIndex
+      path: "/",
+      name: 'indexPage',
+      component: indexPage
     },
     {
-      path: "/todo1",
-      name: 'todo1',
+      path: "/taskTodo",
+      name: 'taskTodo',
       component: todoIndex
     },
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <page-head style="margin-bottom: 0.5rem"></page-head>
     <el-row :gutter="20">
       <el-col :span="6">
         <work-pack ref="workPackRef" @showPackTodoList="showPackTodoList"></work-pack>
@@ -18,9 +18,11 @@
 
   import TodoListIndex from "../../components/todoList/todoListIndex";
   import WorkPack from "../../components/todoList/workPack";
+  import PageHead from "../../components/system/pageComponent/PageHead";
   export default {
     name: 'todoIndex',
     components: {
+      PageHead,
       WorkPack,
       TodoListIndex
 
