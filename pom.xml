@@ -12,6 +12,7 @@
         <module>springboot-log</module>
         <module>database-mongodb</module>
         <module>project-todoList</module>
+        <module>project-article</module>
     </modules>
 
     <!--    确定spring boot版本-->

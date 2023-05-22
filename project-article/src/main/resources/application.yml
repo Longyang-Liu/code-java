@@ -1,0 +1,28 @@
+server:
+  port: 2345
+
+# 项目相关配置
+kw:
+  # 名称
+  name: knowledge-warehouse
+  # 版本
+  version: 1.0.0
+  # 文件路径 示例（ Windows配置D:/mid/uploadPath，Linux配置 /home/mid/uploadPath）
+  profile: C:/Astudy/knowledgeWarehouse
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/knowledge_warehouse?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&tinyInt1isBit=false&allowMultiQueries=true&nullCatalogMeansCurrent=true
+    username: root
+    password: "root"
+
+  jackson:
+    time-zone: GMT+8
+
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 执行语句控制台输出

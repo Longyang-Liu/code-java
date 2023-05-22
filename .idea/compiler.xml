@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="project-article" />
         <module name="database-mongodb" />
         <module name="springboot-poi-tl" />
         <module name="springboot-log" />
@@ -25,6 +26,7 @@
       <module name="code-java" options="-parameters" />
       <module name="code-test" options="-parameters" />
       <module name="database-mongodb" options="-parameters" />
+      <module name="project-article" options="-parameters" />
       <module name="project-todoList" options="-parameters" />
       <module name="springboot-log" options="-parameters" />
       <module name="springboot-poi-tl" options="-parameters" />

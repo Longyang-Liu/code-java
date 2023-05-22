@@ -26,7 +26,7 @@
       },
       // 跳转到文章管理
       goToNote(){
-        goDocumentByObj('', null)
+        goDocumentByObj('articleIndex', null)
       },
     }
   }

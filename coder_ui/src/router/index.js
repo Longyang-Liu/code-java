@@ -8,6 +8,11 @@ import indexPage from "@/views/indexPage";
 // 任务列表组件
 import todoIndex from "@/views/todoList/todoIndex";
 
+// 文章组件
+import articleIndex from "@/views/article/articleIndex";
+import readerIndex from "@/components/article/reader/readerIndex";
+import editorIndex from "@/components/article/editor/editorIndex";
+
 // 2.调用 Vue.use()，把 VueRouter 安装为Vue插件
 Vue.use(VueRouter)
 
@@ -24,6 +29,23 @@ const router = new VueRouter({
       path: "/taskTodo",
       name: 'taskTodo',
       component: todoIndex
+    },
+
+    // 文章管理
+    {
+      path: "/articleIndex",
+      name: 'articleIndex',
+      component: articleIndex
+    },
+    {
+      path: "/editorIndex",
+      name: 'editorIndex',
+      component: editorIndex
+    },
+    {
+      path: "/readerIndex",
+      name: 'readerIndex',
+      component: readerIndex
     },
 
   ]

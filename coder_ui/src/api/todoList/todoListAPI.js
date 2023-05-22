@@ -1,4 +1,4 @@
-import {todoListRequest} from "../../utils/request/TodoListRequest";
+import {todoListRequest} from "@/utils/request/TodoListRequest";
 
 // 查询内容
 export function getList(query) {
