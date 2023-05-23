@@ -12,7 +12,7 @@
 
 <script>
     import {uploadImg} from "@/api/article/articleImg/articleImgAPI";
-    import {articleListURL} from "@/utils/BaseUtil.js";
+    import {articleListURL} from "@/utils/BaseUtil";
 
     export default {
         name: 'mdEditor',

@@ -48,7 +48,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 /** ElementUI END */
 
-
+/** 分页插件 BEGIN */
+import PaginationRef from "@/components/Pagination/PaginationRef"
+// 全局组件挂载
+Vue.component('PaginationRef', PaginationRef)
+/** 分页插件 END */
 
 new Vue({
   render: h => h(App),

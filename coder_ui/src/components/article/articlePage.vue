@@ -51,13 +51,13 @@
           </div>
         </el-card>
 
-<!--        <pagination-->
-<!--                v-show="total>0"-->
-<!--                :total="total"-->
-<!--                :page.sync="queryParams.pageNum"-->
-<!--                :limit.sync="queryParams.pageSize"-->
-<!--                @pagination="getData"-->
-<!--        />-->
+        <pagination-ref
+                v-show="total>0"
+                :total="total"
+                :page.sync="queryParams.pageNum"
+                :limit.sync="queryParams.pageSize"
+                @pagination="getData"
+        ></pagination-ref>
 
       </el-col>
       <el-col :span="6"></el-col>
@@ -78,7 +78,7 @@
         total: 0,
         queryParams: {
           pageNum: 1,
-          pageSize: 99999,
+          pageSize: 4,
           articleTitle: null,
         },
         currentDate: new Date()
