@@ -8,10 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="project-article" />
-        <module name="database-mongodb" />
         <module name="springboot-poi-tl" />
-        <module name="springboot-log" />
+        <module name="backup-mysql" />
+        <module name="database-mongodb" />
         <module name="project-todoList" />
+        <module name="springboot-log" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +23,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="backup-mysql" options="-parameters" />
       <module name="code-demo" options="-parameters" />
       <module name="code-java" options="-parameters" />
       <module name="code-test" options="-parameters" />

@@ -13,6 +13,7 @@
         <module>database-mongodb</module>
         <module>project-todoList</module>
         <module>project-article</module>
+        <module>backup-mysql</module>
     </modules>
 
     <!--    确定spring boot版本-->
