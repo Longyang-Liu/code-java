@@ -112,10 +112,11 @@ public class ArticleInfoController {
     */
     @PutMapping("/updateDetail")
     public Boolean updateDetail(@RequestBody ArticleDetailDTO articleDetailDTO){
-        System.out.println("fsbnkajgbwrkjgfwe");
-        System.out.println(articleDetailDTO);
+        log.info("articleDetailDTO == > {}", articleDetailDTO);
         articleInfoService.updateInfo(articleDetailDTO);
-        articleContentService.updateContent(articleDetailDTO);
+        if(articleDetailDTO.getArticleContent() != null){
+            articleContentService.updateContent(articleDetailDTO);
+        }
         return true;
     }
 

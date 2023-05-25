@@ -24,5 +24,6 @@ public class ArticleDetailDTO {
     String articleDescription;
     String createdBy;
     String creatorNo;
+    String iseq;
     Date creationTime;
 }

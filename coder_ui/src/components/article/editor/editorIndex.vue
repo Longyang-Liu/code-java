@@ -55,6 +55,7 @@
                             background: 'rgba(0, 0, 0, 0.7)'
                         });
                         if(this.form.articleId != null || this.form.id != null){
+                          console.log(this.form)
                             updateDetail(this.form).then(() => {
                                 this.$message({
                                     showClose: true,

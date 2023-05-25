@@ -44,6 +44,9 @@
                   <p class="settingButtons">
                     <el-button style="font-size: 16px; padding: 0" @click="deleteDetails(item.articleId)" class="el-icon-delete" type="text">删除</el-button>
                   </p>
+                  <p class="settingButtons">
+                    <el-button style="font-size: 16px; padding: 0" @click="editorIseq(item)" class="el-icon-sort" type="text">排序</el-button>
+                  </p>
                   <el-button slot="reference" style="font-size: 16px; padding: 0" class="el-icon-setting" type="text">操作</el-button>
                 </el-popover>
               </el-col>
@@ -69,6 +72,7 @@
   import {getInfoList} from "@/api/article/articleInfo/articleInfoAPI";
   import {deleteDetail} from "@/api/article/articleInfo/articleInfoAPI";
   import {goDocumentByObj} from "@/utils/RouterUtil";
+  import {updateDetail} from "@/api/article/articleInfo/articleInfoAPI";
 
   export default {
     name: "articlePage",
@@ -165,6 +169,32 @@
           this.$message({
             type: 'info',
             message: '已取消删除'
+          });
+        });
+      },
+      // 修改文章排序
+      editorIseq(data){
+        console.log(data)
+        this.$prompt('请输入序号', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          inputValue: data.iseq,
+        }).then(({ value }) => {
+          updateDetail({
+            articleId: data.articleId,
+            iseq: value
+          }).then(() => {
+            this.$message({
+              showClose: true,
+              type: 'success',
+              message: '已更新'
+            })
+            this.getData();
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消输入'
           });
         });
       },

@@ -40,7 +40,7 @@ public class IArticleInfoServiceImpl extends ServiceImpl<ArticleInfoMapper, Arti
             // wrapper.like("article_title", articleInfo.getArticleTitle());
             wrapper.like("article_title", articleInfo.getArticleTitle()).or().like("article_description", articleInfo.getArticleTitle());
         }
-        wrapper.select().orderByDesc("iseq");
+        wrapper.select().orderByAsc("iseq");
         return articleInfoMapper.selectPage(page, wrapper);
     }
 
@@ -83,9 +83,16 @@ public class IArticleInfoServiceImpl extends ServiceImpl<ArticleInfoMapper, Arti
     @Override
     public Boolean updateInfo(ArticleDetailDTO articleDetailDTO) {
         LambdaUpdateWrapper<ArticleInfo> lambdaUpdateWrapper = new LambdaUpdateWrapper<>();
-        lambdaUpdateWrapper.eq(ArticleInfo::getArticleId, articleDetailDTO.getArticleId())
-                .set(ArticleInfo::getArticleTitle, articleDetailDTO.getArticleTitle())
-                .set(ArticleInfo::getArticleDescription, articleDetailDTO.getArticleDescription());
+        lambdaUpdateWrapper.eq(ArticleInfo::getArticleId, articleDetailDTO.getArticleId());
+        if(articleDetailDTO.getArticleTitle() != null){
+            lambdaUpdateWrapper.set(ArticleInfo::getArticleTitle, articleDetailDTO.getArticleTitle());
+        }
+        if(articleDetailDTO.getArticleDescription() != null){
+            lambdaUpdateWrapper.set(ArticleInfo::getArticleDescription, articleDetailDTO.getArticleDescription());
+        }
+        if(articleDetailDTO.getIseq() != null){
+            lambdaUpdateWrapper.set(ArticleInfo::getIseq, articleDetailDTO.getIseq());
+        }
         articleInfoMapper.update(null, lambdaUpdateWrapper);
         return true;
     }
