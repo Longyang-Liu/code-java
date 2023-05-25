@@ -1,8 +1,8 @@
 // 后台地址
 export function todoListURL(){
-  return 'http://localhost:1000';
+  return 'http://127.0.0.1:1000';
 }
 
 export function articleListURL(){
-  return 'http://localhost:2345';
+  return 'http://127.0.0.1:2345';
 }

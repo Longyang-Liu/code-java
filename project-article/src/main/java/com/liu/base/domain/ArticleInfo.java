@@ -40,4 +40,7 @@ public class ArticleInfo {
 
     @TableField("creator_no")
     String creatorNo;
+
+    @TableField("iseq")
+    String iseq;
 }

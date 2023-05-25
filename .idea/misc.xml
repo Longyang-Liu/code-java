@@ -9,6 +9,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/backup-mysql/pom.xml" />
         <option value="$PROJECT_DIR$/code-demo/pom.xml" />
         <option value="$PROJECT_DIR$/code-test/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-poi-tl/pom.xml" />

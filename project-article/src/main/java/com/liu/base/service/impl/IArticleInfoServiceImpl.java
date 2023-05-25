@@ -40,7 +40,7 @@ public class IArticleInfoServiceImpl extends ServiceImpl<ArticleInfoMapper, Arti
             // wrapper.like("article_title", articleInfo.getArticleTitle());
             wrapper.like("article_title", articleInfo.getArticleTitle()).or().like("article_description", articleInfo.getArticleTitle());
         }
-        wrapper.select().orderByDesc("article_id");
+        wrapper.select().orderByDesc("iseq");
         return articleInfoMapper.selectPage(page, wrapper);
     }
 
@@ -68,6 +68,7 @@ public class IArticleInfoServiceImpl extends ServiceImpl<ArticleInfoMapper, Arti
     @Override
     public Boolean insertInfo(ArticleInfo articleInfo) {
         articleInfo.setCreationTime(new Date());
+        articleInfo.setIseq(articleInfo.getArticleId());
         articleInfoMapper.insert(articleInfo);
         return true;
     }

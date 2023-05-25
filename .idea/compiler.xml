@@ -16,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="backup-mysql" target="1.8" />
       <module name="code-demo" target="1.8" />
       <module name="code-test" target="1.8" />
       <module name="springboot-poi-tl" target="1.8" />
