@@ -1,6 +1,10 @@
 <template>
   <div>
     <el-input :rows="1" type="textarea" v-model="value" placeholder="packName..." @keyup.enter.native="handleEnter"></el-input>
+
+
+<!--    <el-tree :data="dataList" :props="defaultProps" @node-click="showPackTodoList"></el-tree>-->
+
     <p v-for="item in dataList" :key="item.id" class="packName" style="display: flex; align-content: center">
       <el-progress
               :stroke-width="5"
@@ -10,6 +14,7 @@
               :show-text="false"
               :status="item.progress == 100 ? 'success' : null"
       ></el-progress>
+
       <span @dblclick="showPackDetail(item)" @click="showPackTodoList(item)">{{ item.name }}</span>
     </p>
 
@@ -26,6 +31,7 @@
   import {addWorkPack, getList} from "../../api/todoList/workPackAPI";
   import {textTrim} from "../../utils/StrUtil";
   import {newMessage} from "../../utils/InfoUtil";
+  // import {handleTree} from "../../utils/ListUtils";
 
   export default {
     name: "workPack",
@@ -37,6 +43,10 @@
         value: null,
         dataList: [],
         clickTimer: false,
+        defaultProps: {
+          children: 'children',
+          label: 'name'
+        }
       }
     },
     mounted() {
@@ -46,8 +56,9 @@
       // 获取工作包数据
       getList(){
         getList().then(res => {
+          // this.dataList = handleTree(res.data.records, "id", "pid", null)
           this.dataList = res.data.records
-          console.log(res)
+          console.log(this.dataList)
         })
       },
       // 工作包输入框回车事件
@@ -66,6 +77,9 @@
         }).then(() => {
           this.getList();
         })
+      },
+      handleNodeClick(data) {
+        console.log(data);
       },
       // 单击展示工作包任务
       showPackTodoList(item){
