@@ -6,9 +6,13 @@
 
 <script>
   import PageHead from "../components/system/pageComponent/PageHead";
+
+
   export default {
     name: "indexPage",
-    components: {PageHead}
+    components: {
+      PageHead
+    }
   }
 </script>
 

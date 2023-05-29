@@ -2,6 +2,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+// 登录组件
+import loginIndex from "@/views/loginIndex";
+
 // 首页组件
 import indexPage from "@/views/indexPage";
 
@@ -22,6 +25,11 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
+      name: 'loginIndex',
+      component: loginIndex
+    },
+    {
+      path: "/index",
       name: 'indexPage',
       component: indexPage
     },
