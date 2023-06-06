@@ -14,6 +14,7 @@
         <module>project-todoList</module>
         <module>project-article</module>
         <module>backup-mysql</module>
+        <module>util-MapStruct</module>
     </modules>
 
     <!--    确定spring boot版本-->
