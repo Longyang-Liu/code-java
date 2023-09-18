@@ -14,6 +14,7 @@
         <module name="project-article" />
         <module name="project-todoList" />
         <module name="springboot-log" />
+        <module name="trim-request" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +35,7 @@
       <module name="project-todoList" options="-parameters" />
       <module name="springboot-log" options="-parameters" />
       <module name="springboot-poi-tl" options="-parameters" />
+      <module name="trim-request" options="-parameters" />
       <module name="util-MapStruct" options="-parameters" />
     </option>
   </component>

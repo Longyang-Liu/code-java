@@ -15,6 +15,7 @@
         <module>project-article</module>
         <module>backup-mysql</module>
         <module>util-MapStruct</module>
+        <module>TrimRequest</module>
     </modules>
 
     <!--    确定spring boot版本-->
