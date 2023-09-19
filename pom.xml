@@ -16,6 +16,7 @@
         <module>backup-mysql</module>
         <module>util-MapStruct</module>
         <module>TrimRequest</module>
+        <module>rabbitMQ</module>
     </modules>
 
     <!--    确定spring boot版本-->

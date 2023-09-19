@@ -4,9 +4,8 @@
     <file url="file://$PROJECT_DIR$/database-mongodb/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/project-article/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/project-todoList/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rabbitMQ/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-log/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/trim-request/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/util-MapStruct/src/main/java" charset="UTF-8" />
   </component>

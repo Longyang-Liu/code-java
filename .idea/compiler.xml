@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="util-MapStruct" />
+        <module name="rabbitMQ" />
         <module name="springboot-poi-tl" />
         <module name="backup-mysql" />
         <module name="database-mongodb" />
@@ -33,6 +34,7 @@
       <module name="database-mongodb" options="-parameters" />
       <module name="project-article" options="-parameters" />
       <module name="project-todoList" options="-parameters" />
+      <module name="rabbitMQ" options="-parameters" />
       <module name="springboot-log" options="-parameters" />
       <module name="springboot-poi-tl" options="-parameters" />
       <module name="trim-request" options="-parameters" />
