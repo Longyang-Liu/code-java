@@ -17,6 +17,7 @@
         <module>util-MapStruct</module>
         <module>TrimRequest</module>
         <module>rabbitMQ</module>
+        <module>webMVCConfig</module>
     </modules>
 
     <!--    确定spring boot版本-->

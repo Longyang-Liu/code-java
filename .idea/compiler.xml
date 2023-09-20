@@ -13,6 +13,7 @@
         <module name="backup-mysql" />
         <module name="database-mongodb" />
         <module name="project-article" />
+        <module name="webMVCConfig" />
         <module name="project-todoList" />
         <module name="springboot-log" />
         <module name="trim-request" />
@@ -39,6 +40,7 @@
       <module name="springboot-poi-tl" options="-parameters" />
       <module name="trim-request" options="-parameters" />
       <module name="util-MapStruct" options="-parameters" />
+      <module name="webMVCConfig" options="-parameters" />
     </option>
   </component>
 </project>

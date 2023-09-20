@@ -16,6 +16,9 @@ public class Consumer implements Runnable{
         try {
             Channel channel = MQutils.getChannel();
 
+            //设置分发策略为不公平分发
+//            channel.basicQos(1);
+
             //消费消息
             DeliverCallback deliverCallback=(consumerTag, message)->{
                 System.out.println(Thread.currentThread().getName()+":"+new String(message.getBody()));
