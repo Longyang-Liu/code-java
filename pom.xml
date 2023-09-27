@@ -18,6 +18,7 @@
         <module>TrimRequest</module>
         <module>rabbitMQ</module>
         <module>webMVCConfig</module>
+        <module>redis</module>
     </modules>
 
     <!--    确定spring boot版本-->
