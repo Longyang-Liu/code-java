@@ -19,6 +19,9 @@
         <module>rabbitMQ</module>
         <module>webMVCConfig</module>
         <module>redis</module>
+        <module>testMosule</module>
+        <module>testModule</module>
+        <module>ORM-EBean</module>
     </modules>
 
     <!--    确定spring boot版本-->

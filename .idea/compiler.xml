@@ -7,17 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="redis" />
-        <module name="util-MapStruct" />
-        <module name="rabbitMQ" />
-        <module name="springboot-poi-tl" />
-        <module name="backup-mysql" />
-        <module name="database-mongodb" />
-        <module name="project-article" />
-        <module name="project-todoList" />
-        <module name="webMVCConfig" />
         <module name="trim-request" />
+        <module name="project-todoList" />
+        <module name="database-mongodb" />
+        <module name="redis" />
+        <module name="ORM-EBean" />
+        <module name="rabbitMQ" />
+        <module name="util-MapStruct" />
+        <module name="springboot-poi-tl" />
+        <module name="testModule" />
         <module name="springboot-log" />
+        <module name="webMVCConfig" />
+        <module name="backup-mysql" />
+        <module name="project-article" />
+        <module name="testMosule" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,10 +28,13 @@
       <module name="code-demo" target="1.8" />
       <module name="code-test" target="1.8" />
       <module name="springboot-poi-tl" target="1.8" />
+      <module name="testModule" target="1.8" />
+      <module name="testMosule" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ORM-EBean" options="-parameters" />
       <module name="backup-mysql" options="-parameters" />
       <module name="code-demo" options="-parameters" />
       <module name="code-java" options="-parameters" />
@@ -40,6 +46,8 @@
       <module name="redis" options="-parameters" />
       <module name="springboot-log" options="-parameters" />
       <module name="springboot-poi-tl" options="-parameters" />
+      <module name="testModule" options="-parameters" />
+      <module name="testMosule" options="-parameters" />
       <module name="trim-request" options="-parameters" />
       <module name="util-MapStruct" options="-parameters" />
       <module name="webMVCConfig" options="-parameters" />

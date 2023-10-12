@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/code-demo/pom.xml" />
         <option value="$PROJECT_DIR$/code-test/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-poi-tl/pom.xml" />
+        <option value="$PROJECT_DIR$/testModule/pom.xml" />
       </set>
     </option>
   </component>
