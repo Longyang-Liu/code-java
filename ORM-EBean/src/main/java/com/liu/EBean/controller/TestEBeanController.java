@@ -1,8 +1,10 @@
 package com.liu.EBean.controller;
 
+import com.liu.EBean.domain.StudentDTO;
 import com.liu.EBean.domain.User;
 import io.ebean.Ebean;
 import io.ebean.SqlRow;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -67,6 +69,20 @@ public class TestEBeanController {
         String str = "select * from t_user;";
         List<SqlRow> list = Ebean.createSqlQuery(str).findList();
         System.out.println(list);
+    }
+
+
+    @GetMapping("/selectJoin")
+    public String selectJoin(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("select * from t_user tu ");
+        stringBuilder.append("LEFT JOIN t_student ts ON tu.id = ts.user_id ");
+        stringBuilder.append("WHERE ts.user_id = 111 ");
+        List<SqlRow> list = Ebean.createSqlQuery(stringBuilder.toString()).findList();
+
+        System.out.println(list.get(0));
+
+        return list.get(0).toString();
     }
 
 
