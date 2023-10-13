@@ -11,13 +11,13 @@
         <module name="project-todoList" />
         <module name="database-mongodb" />
         <module name="redis" />
-        <module name="ORM-EBean" />
+        <module name="webMVCConfig" />
         <module name="rabbitMQ" />
+        <module name="ORM-EBean" />
         <module name="util-MapStruct" />
         <module name="springboot-poi-tl" />
         <module name="testModule" />
         <module name="springboot-log" />
-        <module name="webMVCConfig" />
         <module name="backup-mysql" />
         <module name="project-article" />
         <module name="testMosule" />
