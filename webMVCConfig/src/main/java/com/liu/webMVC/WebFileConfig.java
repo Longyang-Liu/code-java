@@ -7,11 +7,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebFileConfig implements WebMvcConfigurer {
 
-
-    private final static String fileUrl = "E:\\tempFile\\";
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/file/**").addResourceLocations("file:" + fileUrl);
+        registry.addResourceHandler("/file/**").addResourceLocations("file:" + YnConfig.getFilePath());
     }
 }
