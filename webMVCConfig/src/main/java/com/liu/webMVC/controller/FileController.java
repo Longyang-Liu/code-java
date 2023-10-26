@@ -26,7 +26,13 @@ public class FileController {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < listOfFiles.length; i++) {
             File listOfFile = listOfFiles[i];
-            result.append(listOfFile.toString()).append("<br>"); // 使用<br>标签表示换行
+            StringBuilder stringBuilder1 = new StringBuilder();
+            if (listOfFile.isFile()) {
+                stringBuilder1.append("File: ").append(listOfFile.getName());
+            } else if (listOfFile.isDirectory()) {
+                stringBuilder1.append("Directory: ").append(listOfFile.getName());
+            }
+            result.append(stringBuilder1).append("<br>"); // 使用<br>标签表示换行
         }
         String string = result.toString();
         return ResponseEntity.ok(string);
