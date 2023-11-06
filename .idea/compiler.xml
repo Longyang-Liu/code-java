@@ -7,20 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="trim-request" />
-        <module name="project-todoList" />
+        <module name="webMVCConfig" />
+        <module name="ORM-EBean" />
+        <module name="springboot-poi-tl" />
+        <module name="backup-mysql" />
+        <module name="springboot-log" />
+        <module name="rabbitMQ" />
         <module name="database-mongodb" />
         <module name="redis" />
-        <module name="webMVCConfig" />
-        <module name="rabbitMQ" />
-        <module name="ORM-EBean" />
-        <module name="util-MapStruct" />
-        <module name="springboot-poi-tl" />
         <module name="testModule" />
-        <module name="springboot-log" />
-        <module name="backup-mysql" />
+        <module name="project-todoList" />
         <module name="project-article" />
         <module name="testMosule" />
+        <module name="trim-request" />
+        <module name="util-MapStruct" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -37,7 +37,7 @@
       <module name="ORM-EBean" options="-parameters" />
       <module name="backup-mysql" options="-parameters" />
       <module name="code-demo" options="-parameters" />
-      <module name="code-java" options="-parameters" />
+      <module name="code-java" options="" />
       <module name="code-test" options="-parameters" />
       <module name="database-mongodb" options="-parameters" />
       <module name="project-article" options="-parameters" />

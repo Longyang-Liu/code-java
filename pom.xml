@@ -13,14 +13,11 @@
         <module>database-mongodb</module>
         <module>project-todoList</module>
         <module>project-article</module>
-        <module>backup-mysql</module>
         <module>util-MapStruct</module>
-        <module>TrimRequest</module>
+        <module>trim-request</module>
         <module>rabbitMQ</module>
         <module>webMVCConfig</module>
         <module>redis</module>
-        <module>testMosule</module>
-        <module>testModule</module>
         <module>ORM-EBean</module>
     </modules>
 
