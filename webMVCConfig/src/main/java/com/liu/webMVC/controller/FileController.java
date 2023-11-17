@@ -1,7 +1,7 @@
 package com.liu.webMVC.controller;
 
 
-import com.liu.webMVC.YnConfig;
+import com.liu.webMVC.config.YnConfig;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,5 +1,17 @@
 yn:
-  filePath: E:/tempFile/
+  filePath: E:/videos/cili/
 
 server:
   port: 1236
+
+spring:
+  application:
+    name: webMVC
+
+  # 数据库配置文件
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/web_mvc?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&useSSL=true&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource

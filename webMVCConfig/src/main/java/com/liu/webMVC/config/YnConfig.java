@@ -1,4 +1,4 @@
-package com.liu.webMVC;
+package com.liu.webMVC.config;
 
 
 import lombok.Data;
